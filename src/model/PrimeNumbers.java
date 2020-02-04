@@ -33,5 +33,17 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
+	
+	
+	
+	public boolean primeNumbersVerification3(int n){
+		boolean aux = true;
+		for(int i = n - 1; i > 1 && aux; i--) {
+			if(n%i == 0) {
+				aux = false;
+			}
+		}
+		return aux;
+	}
 
 }
