@@ -1,5 +1,6 @@
 package model;
-import java.lang.Math; 
+import java.lang.Math;
+import java.util.InputMismatchException; 
 
 
 public class PrimeNumbers {
@@ -7,6 +8,20 @@ public class PrimeNumbers {
 	public PrimeNumbers() {
 		
 	}
+	
+	public int convertToInt(String n) {
+		int toSend = 0;
+		try {
+			 toSend = Integer.parseInt(n);
+		} catch(InputMismatchException e) {
+			throw new InputMismatchException("Warning! Fail");
+		}
+		
+		return toSend;
+	}
+	
+	
+	
 	public boolean primeNumbersVerification1(int n){
 		boolean aux = true;
 		if(n==1) {
@@ -21,6 +36,9 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
+	
+	
+	
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
 		
@@ -32,9 +50,13 @@ public class PrimeNumbers {
 					aux = false;
 				}
 			}
-		}	
+		}
+		
 		return aux;
 	}
+	
+	
+	
 	public boolean primeNumbersVerification3(int n){
 		boolean aux = true;
 		if(n==1) {
@@ -48,12 +70,9 @@ public class PrimeNumbers {
 		}
 		return aux;
 	}
-<<<<<<< HEAD
 	
 	
 	
-=======
->>>>>>> 168b2416d88cee245c4bf83d92bf5527ae6329ce
 	public boolean Validation1Prime(int numberToValidate) {
 		int counter = 0;
 		boolean ok = false;
@@ -67,7 +86,6 @@ public class PrimeNumbers {
 		}
 		return ok;
 	}
-<<<<<<< HEAD
 	
 	
 	
@@ -76,11 +94,5 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
-=======
-	public int generateMatrix(int n) {
-        int aux = (int) Math.sqrt(n) + 1;
-        return aux;
-    }
->>>>>>> 168b2416d88cee245c4bf83d92bf5527ae6329ce
 
 }
