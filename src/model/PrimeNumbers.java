@@ -33,9 +33,6 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
-	
-	
-	
 	public boolean primeNumbersVerification3(int n){
 		boolean aux = true;
 		for(int i = n - 1; i > 1 && aux; i--) {
@@ -44,6 +41,21 @@ public class PrimeNumbers {
 			}
 		}
 		return aux;
+	}
+	
+	
+	public boolean Validation1Prime(int numberToValidate) {
+		int counter = 0;
+		boolean ok = false;
+		for(int i = 2; i <= numberToValidate; i++) {
+			if(numberToValidate % i == 0) {
+				counter++;
+			}
+		}
+		if(counter == 1) {
+			ok = true;
+		}
+		return ok;
 	}
 
 }
