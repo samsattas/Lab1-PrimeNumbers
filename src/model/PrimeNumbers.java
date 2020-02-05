@@ -5,7 +5,6 @@ public class PrimeNumbers {
 	public PrimeNumbers() {
 		
 	}
-	
 	public boolean primeNumbersVerification1(int n){
 		boolean aux = true;
 		for(int i = 2; i < n && aux; i++) {
@@ -15,9 +14,6 @@ public class PrimeNumbers {
 		}
 		return aux;
 	}
-	
-	
-	
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
 		
@@ -29,8 +25,7 @@ public class PrimeNumbers {
 					aux = false;
 				}
 			}
-		}
-		
+		}	
 		return aux;
 	}
 	public boolean primeNumbersVerification3(int n){
@@ -42,8 +37,6 @@ public class PrimeNumbers {
 		}
 		return aux;
 	}
-	
-	
 	public boolean Validation1Prime(int numberToValidate) {
 		int counter = 0;
 		boolean ok = false;
@@ -57,5 +50,9 @@ public class PrimeNumbers {
 		}
 		return ok;
 	}
+	public int generateMatrix(int n) {
+        int aux = (int) Math.sqrt(n) + 1;
+        return aux;
+    }
 
 }
