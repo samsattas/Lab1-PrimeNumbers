@@ -1,22 +1,36 @@
 package model;
 
+import java.util.InputMismatchException;
+
 public class PrimeNumbers {
 
 	public PrimeNumbers() {
 		
 	}
-	public boolean primeNumbersVerification1(int n){
-		boolean aux = true;
-		for(int i = 2; i < n && aux; i++) {
-			if(n%i == 0) {
-				aux = false;
-			}
+	public int convertToInt(String n) {
+		int toSend = 0;
+		try {
+			 toSend = Integer.parseInt(n);
+		} catch(InputMismatchException e) {
+			throw new InputMismatchException("Warning! Fail");
 		}
+		
+		return toSend;
+	}
+	public boolean primeNumbersVerification1(String s) throws InputMismatchException{
+		boolean aux = true;
+		int n = convertToInt(s);
+			for(int i = 2; i < n && aux; i++) {
+				if(n%i == 0) {
+					aux = false;
+				}
+			}
+	
 		return aux;
 	}
-	public boolean primeNumbersVerification2(int n){
+	public boolean primeNumbersVerification2(String s){
 		boolean aux = true;
-		
+		int n = convertToInt(s);
 		if(n%2 == 0) {
 			aux = false;
 		}else {
@@ -28,8 +42,9 @@ public class PrimeNumbers {
 		}	
 		return aux;
 	}
-	public boolean primeNumbersVerification3(int n){
+	public boolean primeNumbersVerification3(String s){
 		boolean aux = true;
+		int n = convertToInt(s);
 		for(int i = n - 1; i > 1 && aux; i--) {
 			if(n%i == 0) {
 				aux = false;
@@ -37,11 +52,12 @@ public class PrimeNumbers {
 		}
 		return aux;
 	}
-	public boolean Validation1Prime(int numberToValidate) {
+	public boolean Validation1Prime(String s) {
 		int counter = 0;
+		int n = convertToInt(s);
 		boolean ok = false;
-		for(int i = 2; i <= numberToValidate; i++) {
-			if(numberToValidate % i == 0) {
+		for(int i = 2; i <= n; i++) {
+			if(n % i == 0) {
 				counter++;
 			}
 		}
