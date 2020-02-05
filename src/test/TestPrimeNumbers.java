@@ -8,11 +8,12 @@ import model.PrimeNumbers;
 
 class TestPrimeNumbers {
 
-	public int setUpScenePrimeNumbers() /*throw*/   {
+	public int setUpScenePrimeNumbers()    {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			if(prime.Validation1Prime(i) == true) {
+			String converted = String.valueOf(i);
+			if(prime.Validation1Prime(converted) == true) {
 				counter++;
 			}
 		}
@@ -22,17 +23,27 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=10; i++) {
-			if(prime.primeNumbersVerification1(i) == true) {
+			String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification1(converted) == true) {
 				counter++;
 			}
 		}
 		return counter;
 	}
+	/*
+	public void setUpSceneprimeNumbersVerification1Exception() {
+		int counter = 0;
+		PrimeNumbers prime = new PrimeNumbers();
+		prime.primeNumbersVerification1("Jeison top monitor");
+		
+	}
+	*/
 	public int setUpSceneprimeNumbersVerification2() {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			if(prime.primeNumbersVerification2(i) == true) {
+			String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification2(converted) == true) {
 				counter++;
 			}
 		}
@@ -42,7 +53,8 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			if(prime.primeNumbersVerification3(i) == true) {
+			String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification3(converted) == true) {
 				counter++;
 			}
 		}
