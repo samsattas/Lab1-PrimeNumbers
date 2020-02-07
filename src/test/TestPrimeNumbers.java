@@ -12,8 +12,8 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			String converted = String.valueOf(i);
-			if(prime.Validation1Prime(converted) == true) {
+			//String converted = String.valueOf(i);
+			if(prime.Validation1Prime(i) == true) {
 				counter++;
 			}
 		}
@@ -22,9 +22,9 @@ class TestPrimeNumbers {
 	public int setUpSceneprimeNumbersVerification1() {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
-		for(int i = 1; i<=10; i++) {
-			String converted = String.valueOf(i);
-			if(prime.primeNumbersVerification1(converted) == true) {
+		for(int i = 1; i<=100; i++) {
+			//String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification1(i) == true) {
 				counter++;
 			}
 		}
@@ -42,8 +42,8 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			String converted = String.valueOf(i);
-			if(prime.primeNumbersVerification2(converted) == true) {
+			//String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification2(i) == true) {
 				counter++;
 			}
 		}
@@ -53,8 +53,8 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			String converted = String.valueOf(i);
-			if(prime.primeNumbersVerification3(converted) == true) {
+			//String converted = String.valueOf(i);
+			if(prime.primeNumbersVerification3(i) == true) {
 				counter++;
 			}
 		}
