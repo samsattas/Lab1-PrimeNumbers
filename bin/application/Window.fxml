@@ -29,9 +29,9 @@
          <children>
             <Label alignment="CENTER" prefHeight="18.0" prefWidth="231.0" text="Enter a positive integer number" textAlignment="CENTER" />
             <TextField fx:id="numberField" promptText="Enter a number" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="255.0" text="Solve by Samuel" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="255.0" text="Solve by Josue" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="255.0" text="Solve by Juan" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#findPrimeNumbers1" prefHeight="26.0" prefWidth="255.0" text="Solve by Samuel" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#findPrimeNumbers3" prefHeight="26.0" prefWidth="255.0" text="Solve by Josue" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#findPrimeNumbers2" prefHeight="26.0" prefWidth="255.0" text="Solve by Juan" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
