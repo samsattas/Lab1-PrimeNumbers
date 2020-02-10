@@ -90,8 +90,9 @@ public class PrimeNumbers {
 	
 	
 	public int generateMatrix(int n) {
+		double x = Math.sqrt(n);
 		int aux = (int) Math.sqrt(n);
-		if(n%aux != 0) {
+		if(n%x != 0) {
 			aux++;
 		}
 		
