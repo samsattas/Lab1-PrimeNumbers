@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import model.PrimeNumbers;
@@ -12,7 +14,6 @@ class TestPrimeNumbers {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
 		for(int i = 1; i<=100; i++) {
-			//String converted = String.valueOf(i);
 			if(prime.Validation1Prime(i) == true) {
 				counter++;
 			}
@@ -30,14 +31,6 @@ class TestPrimeNumbers {
 		}
 		return counter;
 	}
-	/*
-	public void setUpSceneprimeNumbersVerification1Exception() {
-		int counter = 0;
-		PrimeNumbers prime = new PrimeNumbers();
-		prime.primeNumbersVerification1("Jeison top monitor");
-		
-	}
-	*/
 	public int setUpSceneprimeNumbersVerification2() {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
@@ -64,31 +57,88 @@ class TestPrimeNumbers {
 		PrimeNumbers prime = new PrimeNumbers();
 		return prime.generateMatrix(133);
 	}
+	public ArrayList<Boolean> setUpSceneIsPrimeValidation1Prime() {
+		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
+		PrimeNumbers prime = new PrimeNumbers();
+		for(int i = 1; i<=7; i+=2) {
+			if(prime.Validation1Prime(i) == true) {
+				boolean toadd = prime.Validation1Prime(i);
+				arrayWithBoolean.add(toadd);
+			}
+		}
+		return arrayWithBoolean;	
+	}
+	public ArrayList<Boolean> setUpSceneIsPrimeValidation2Prime() {
+		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
+		PrimeNumbers prime = new PrimeNumbers();
+		for(int i = 1; i<=7; i+=2) {
+			if(prime.primeNumbersVerification1(i) == true) {
+				boolean toadd = prime.primeNumbersVerification1(i);
+				arrayWithBoolean.add(toadd);
+			}
+		}
+		return arrayWithBoolean;	
+	}
+	public ArrayList<Boolean> setUpSceneIsPrimeValidation3Prime() {
+		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
+		PrimeNumbers prime = new PrimeNumbers();
+		for(int i = 1; i<=7; i+=2) {
+			if(prime.primeNumbersVerification2(i) == true) {
+				boolean toadd = prime.primeNumbersVerification2(i);
+				arrayWithBoolean.add(toadd);
+			}
+		}
+		return arrayWithBoolean;	
+	}
+	public ArrayList<Boolean> setUpSceneIsPrimeValidation4Prime() {
+		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
+		PrimeNumbers prime = new PrimeNumbers();
+		for(int i = 1; i<=7; i+=2) {
+			if(prime.primeNumbersVerification3(i) == true) {
+				boolean toadd = prime.primeNumbersVerification3(i);
+				arrayWithBoolean.add(toadd);
+			}
+		}
+		return arrayWithBoolean;	
+	}
 	@Test
 	void test() {
-		//setUpScenePrimeNumbers();
 		assertEquals(25, setUpScenePrimeNumbers());
 	}
 	@Test
 	void testprimeNumbersVerification1() {
-		//setUpSceneprimeNumbersVerification1();
 		assertEquals(25, setUpSceneprimeNumbersVerification1());
 	}
 	@Test
 	void testprimeNumbersVerification2() {
-		//setUpSceneprimeNumbersVerification2();
 		assertEquals(25, setUpSceneprimeNumbersVerification2());
 	}
 	@Test
 	void testprimeNumbersVerification3() {
-		//setUpSceneprimeNumbersVerification3();
 		assertEquals(25, setUpSceneprimeNumbersVerification3());
 	}
 	@Test
 	void testgenerateMatrix(){
-		//setUpScenegenerateMatrix();
 		assertEquals(12, setUpScenegenerateMatrix());
 	}
-	
-	
+	@Test
+	void testIsPrimeWithArrayList() {
+		String info = setUpSceneIsPrimeValidation1Prime().toString();
+		assertEquals("[true, true, true]", info);
+	}
+	@Test
+	void testIsPrimeWithArrayListNbersVeri1() {
+		String info = setUpSceneIsPrimeValidation2Prime().toString();
+		assertEquals("[true, true, true]", info);
+	}
+	@Test
+	void testIsPrimeWithArrayListNbersVeri2() {
+		String info = setUpSceneIsPrimeValidation3Prime().toString();
+		assertEquals("[true, true, true, true]", info);
+	}
+	@Test
+	void testIsPrimeWithArrayListNbersVeri3() {
+		String info = setUpSceneIsPrimeValidation4Prime().toString();
+		assertEquals("[true, true, true]", info);
+	}
 }
