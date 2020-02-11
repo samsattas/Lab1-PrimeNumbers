@@ -8,37 +8,28 @@ public class PrimeNumbers {
 	public PrimeNumbers() {
 		
 	}
-	
 	public int convertToInt(String n) {
 		int toSend = 0;
 		try {
 			 toSend = Integer.parseInt(n);
-		} catch(InputMismatchException e) {
-			throw new InputMismatchException("Warning! Fail");
+		} catch(NumberFormatException e) {
+			//throw new InputMismatchException("Warning! Fail");
+			System.out.println("FAIL!");
 		}
 		
 		return toSend;
 	}
-	
-	
-	
 	public boolean primeNumbersVerification1(int n){
 		boolean aux = true;
-		if(n==1) {
-			aux = false;
-		}else {
-			for(int i = 2; i < n && aux; i++) {
-				if(n%i == 0) {
-					aux = false;
-				}
+		
+		for(int i = 2; i < n && aux; i++) {
+			if(n%i == 0) {
+				aux = false;
 			}
 		}
 		
 		return aux;
 	}
-	
-	
-	
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
 		
@@ -54,9 +45,6 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
-	
-	
-	
 	public boolean primeNumbersVerification3(int n){
 		boolean aux = true;
 		if(n==1) {
@@ -69,10 +57,7 @@ public class PrimeNumbers {
 			}
 		}
 		return aux;
-	}
-	
-	
-	
+	}	
 	public boolean Validation1Prime(int numberToValidate) {
 		int counter = 0;
 		boolean ok = false;
@@ -86,17 +71,18 @@ public class PrimeNumbers {
 		}
 		return ok;
 	}
-	
-	
-	
 	public int generateMatrix(int n) {
-		double x = Math.sqrt(n);
-		int aux = (int) Math.sqrt(n);
-		if(n%x != 0) {
-			aux++;
+		double x = 0;
+		int aux = 0;
+		try {
+			 x = Math.sqrt(n);
+			 aux = (int) Math.sqrt(n);
+				if(n%x != 0) {
+					aux++;
+				}
+		} catch (NumberFormatException e) {
+			aux = 0;
 		}
-		
 		return aux;
 	}
-
 }
