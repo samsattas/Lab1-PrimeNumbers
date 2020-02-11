@@ -42,7 +42,7 @@ public class PrimeNumbers {
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
 		
-		if(n%2 == 0) {
+		if(n%2 == 0 && n!=2) {
 			aux = false;
 		}else {
 			for(int i = 3; i < n && aux; i+=2) {
