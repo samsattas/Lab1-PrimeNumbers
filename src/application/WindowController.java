@@ -41,7 +41,7 @@ public class WindowController {
 		int aux = pn.convertToInt(numberField.getText());
 		int matrix = pn.generateMatrix(aux);
 		GridPane gp = new GridPane();
-		gp.setGridLinesVisible(true);
+//		gp.setGridLinesVisible(true);
 		gp.setAlignment(Pos.CENTER);
 //		gp.setVgap(15);
 //		gp.setHgap(15);
@@ -53,9 +53,9 @@ public class WindowController {
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
 				if(!pn.primeNumbersVerification2(counter)) {
-					l.setStyle("-fx-border-color: darkred; -fx-background-color: red;");
+					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
 				}else {
-					l.setStyle("-fx-border-color: darkgreen; -fx-background-color: green;");
+					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
 					
 				}
 
@@ -67,10 +67,56 @@ public class WindowController {
 	}
 	
 	public void findPrimeNumbers2(ActionEvent av) {
-			
+mp.getChildren().clear();
+		
+		int aux = pn.convertToInt(numberField.getText());
+		int matrix = pn.generateMatrix(aux);
+		GridPane gp = new GridPane();
+		gp.setAlignment(Pos.CENTER);
+		mp.getChildren().add(gp);
+		int counter = 1;
+		for(int i = 0; i < matrix && counter <= aux; i++) {
+			for(int j = 0; j < matrix && counter <= aux; j++) {
+				Label l = new Label(counter+" ");
+				l.setFont(Font.font(20));
+				l.setMinSize(50, 40);
+				if(!pn.primeNumbersVerification1(counter)) {
+					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
+				}else {
+					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
+					
+				}
+
+				
+				gp.add(l, j, i);
+				counter++;
+			}
+		}
 	}
 	
 	public void findPrimeNumbers3(ActionEvent av) {
+		mp.getChildren().clear();
 		
+		int aux = pn.convertToInt(numberField.getText());
+		int matrix = pn.generateMatrix(aux);
+		GridPane gp = new GridPane();
+		gp.setAlignment(Pos.CENTER);
+		mp.getChildren().add(gp);
+		int counter = 1;
+		for(int i = 0; i < matrix && counter <= aux; i++) {
+			for(int j = 0; j < matrix && counter <= aux; j++) {
+				Label l = new Label(counter+" ");
+				l.setFont(Font.font(20));
+				l.setMinSize(50, 40);
+				if(!pn.Validation1Prime(counter)) {
+					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
+				}else {
+					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
+				}
+				
+				gp.add(l, j, i);
+				counter++;
+			}
+		}
 	}
 }
