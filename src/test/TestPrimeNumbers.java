@@ -20,17 +20,7 @@ class TestPrimeNumbers {
 		}
 		return counter;
 	}
-	public int setUpSceneprimeNumbersVerification1() {
-		int counter = 0;
-		PrimeNumbers prime = new PrimeNumbers();
-		for(int i = 1; i<=100; i++) {
-			//String converted = String.valueOf(i);
-			if(prime.primeNumbersVerification1(i) == true) {
-				counter++;
-			}
-		}
-		return counter;
-	}
+	
 	public int setUpSceneprimeNumbersVerification2() {
 		int counter = 0;
 		PrimeNumbers prime = new PrimeNumbers();
@@ -68,17 +58,7 @@ class TestPrimeNumbers {
 		}
 		return arrayWithBoolean;	
 	}
-	public ArrayList<Boolean> setUpSceneIsPrimeValidation2Prime() {
-		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
-		PrimeNumbers prime = new PrimeNumbers();
-		for(int i = 1; i<=7; i+=2) {
-			if(prime.primeNumbersVerification1(i) == true) {
-				boolean toadd = prime.primeNumbersVerification1(i);
-				arrayWithBoolean.add(toadd);
-			}
-		}
-		return arrayWithBoolean;	
-	}
+	
 	public ArrayList<Boolean> setUpSceneIsPrimeValidation3Prime() {
 		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
 		PrimeNumbers prime = new PrimeNumbers();
@@ -115,10 +95,7 @@ class TestPrimeNumbers {
 	void test() {
 		assertEquals(25, setUpScenePrimeNumbers());
 	}
-	@Test
-	void testprimeNumbersVerification1() {
-		assertEquals(26, setUpSceneprimeNumbersVerification1());
-	}
+	
 	@Test
 	void testprimeNumbersVerification2() {
 		assertEquals(26, setUpSceneprimeNumbersVerification2());
@@ -136,11 +113,7 @@ class TestPrimeNumbers {
 		String info = setUpSceneIsPrimeValidation1Prime().toString();
 		assertEquals("[true, true, true]", info);
 	}
-	@Test
-	void testIsPrimeWithArrayListNbersVeri1() {
-		String info = setUpSceneIsPrimeValidation2Prime().toString();
-		assertEquals("[true, true, true, true]", info);
-	}
+	
 	@Test
 	void testIsPrimeWithArrayListNbersVeri2() {
 		String info = setUpSceneIsPrimeValidation3Prime().toString();
