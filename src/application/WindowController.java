@@ -45,9 +45,15 @@ public class WindowController {
 		int time = 1000;
 		for(int i = 0; i < matrix && counter <= aux; i++) {
 			for(int j = 0; j < matrix && counter <= aux; j++) {
+				
 				Label l = new Label(counter+" ");
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
+				if(counter==2) {
+					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
+				}else if(counter%2==0) {
+					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
+				}
 				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time);
 				t.start();
 
@@ -67,6 +73,7 @@ public class WindowController {
 		GridPane gp = new GridPane();
 		gp.setAlignment(Pos.CENTER);
 		mp.getChildren().add(gp);
+		
 		int counter = 1;
 		int time = 1000;
 		for(int i = 0; i < matrix && counter <= aux; i++) {
@@ -83,6 +90,7 @@ public class WindowController {
 				time+=200;
 			}
 		}
+		
 	}
 	
 	public void findPrimeNumbers3(ActionEvent av) {

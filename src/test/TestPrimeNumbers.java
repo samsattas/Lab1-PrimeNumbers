@@ -102,7 +102,7 @@ class TestPrimeNumbers {
 	}
 	@Test
 	void testprimeNumbersVerification3() {
-		assertEquals(25, setUpSceneprimeNumbersVerification3());
+		assertEquals(26, setUpSceneprimeNumbersVerification3());
 	}
 	@Test
 	void testgenerateMatrix(){
@@ -122,7 +122,7 @@ class TestPrimeNumbers {
 	@Test
 	void testIsPrimeWithArrayListNbersVeri3() {
 		String info = setUpSceneIsPrimeValidation4Prime().toString();
-		assertEquals("[true, true, true]", info);
+		assertEquals("[true, true, true, true]", info);
 	}
 	@Test
 	void testCovertToInt() {
