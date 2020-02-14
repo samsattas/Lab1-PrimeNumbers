@@ -48,7 +48,7 @@ public class WindowController {
 				Label l = new Label(counter+" ");
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
-				MatrixThread t = new MatrixThread(l, pn.Validation1Prime(counter), time);
+				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time);
 				t.start();
 
 				
