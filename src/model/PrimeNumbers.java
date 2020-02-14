@@ -8,6 +8,7 @@ public class PrimeNumbers {
 	public PrimeNumbers() {
 		
 	}
+	
 	public int convertToInt(String n) {
 		int toSend = 0;
 		try {
@@ -19,17 +20,7 @@ public class PrimeNumbers {
 		
 		return toSend;
 	}
-	public boolean primeNumbersVerification1(int n){
-		boolean aux = true;
-		
-		for(int i = 2; i < n && aux; i++) {
-			if(n%i == 0) {
-				aux = false;
-			}
-		}
-		
-		return aux;
-	}
+	
 	
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
@@ -48,15 +39,13 @@ public class PrimeNumbers {
 	}
 	public boolean primeNumbersVerification3(int n){
 		boolean aux = true;
-		if(n==1) {
-			aux = false;
-		}else {
-			for(int i = n - 1; i > 1 && aux; i--) {
-				if(n%i == 0) {
-					aux = false;
-				}
+		
+		for(int i = n - 1; i > 1 && aux; i--) {
+			if(n%i == 0) {
+				aux = false;
 			}
 		}
+		
 		return aux;
 	}	
 	public boolean Validation1Prime(int numberToValidate) {

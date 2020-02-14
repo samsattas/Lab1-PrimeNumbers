@@ -39,27 +39,22 @@ public class WindowController {
 		int aux = pn.convertToInt(numberField.getText());
 		int matrix = pn.generateMatrix(aux);
 		GridPane gp = new GridPane();
-//		gp.setGridLinesVisible(true);
 		gp.setAlignment(Pos.CENTER);
-//		gp.setVgap(15);
-//		gp.setHgap(15);
 		mp.getChildren().add(gp);
 		int counter = 1;
+		int time = 1000;
 		for(int i = 0; i < matrix && counter <= aux; i++) {
 			for(int j = 0; j < matrix && counter <= aux; j++) {
 				Label l = new Label(counter+" ");
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
-				if(!pn.primeNumbersVerification2(counter)) {
-					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
-				}else {
-					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
-					
-				}
+				MatrixThread t = new MatrixThread(l, pn.Validation1Prime(counter), time);
+				t.start();
 
 				
 				gp.add(l, j, i);
 				counter++;
+				time+=200;
 			}
 		}
 	}
@@ -80,18 +75,14 @@ public class WindowController {
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
 				
-				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification1(counter), time);
+				MatrixThread t = new MatrixThread(l, pn.Validation1Prime(counter), time);
 				t.start();
 				
 				gp.add(l, j, i);
 				counter++;
-				time+=1000;
+				time+=200;
 			}
 		}
-	}
-	
-	public void paint(Label l) {
-		l.setStyle("-fx-border-color: white; -fx-background-color: red;");
 	}
 	
 	public void findPrimeNumbers3(ActionEvent av) {
@@ -102,20 +93,21 @@ public class WindowController {
 		GridPane gp = new GridPane();
 		gp.setAlignment(Pos.CENTER);
 		mp.getChildren().add(gp);
-		int counter = 1;
-		for(int i = 0; i < matrix && counter <= aux; i++) {
-			for(int j = 0; j < matrix && counter <= aux; j++) {
+		int counter = aux;
+		int time = 500;
+		for(int i = matrix; i > 0 && counter >= 1; i--) {
+			for(int j = matrix; j > 0 && counter >= 1; j--) {
 				Label l = new Label(counter+" ");
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
-				if(!pn.Validation1Prime(counter)) {
-					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
-				}else {
-					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
-				}
+				
+				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification3(counter), time);
+				t.start();
 				
 				gp.add(l, j, i);
-				counter++;
+				counter--;
+				time+=200;
+				
 			}
 		}
 	}
