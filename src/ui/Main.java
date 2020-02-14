@@ -13,8 +13,8 @@ public class Main extends Application {
             Parent root =  FXMLLoader.load(getClass().getResource("/application/Window.fxml"));
             primaryStage.setTitle("Prime Numbers Finder");
             primaryStage.setScene(new Scene(root));
-            primaryStage.setWidth(900);
-            primaryStage.setHeight(500);
+            primaryStage.setWidth(1000);
+            primaryStage.setHeight(800);
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();

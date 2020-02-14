@@ -30,6 +30,7 @@ public class PrimeNumbers {
 		
 		return aux;
 	}
+	
 	public boolean primeNumbersVerification2(int n){
 		boolean aux = true;
 		
