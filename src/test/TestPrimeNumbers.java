@@ -101,17 +101,27 @@ class TestPrimeNumbers {
 		}
 		return arrayWithBoolean;	
 	}
+	public int setUpSceneConvertToInt() {
+		PrimeNumbers prime = new PrimeNumbers();
+		int toTest = prime.convertToInt("22");
+		return toTest;
+	}
+	public int setUpSceneExceptioConvert() {
+		PrimeNumbers prime = new PrimeNumbers();
+		int toTest = prime.convertToInt("dd");
+		return toTest;
+	}
 	@Test
 	void test() {
 		assertEquals(25, setUpScenePrimeNumbers());
 	}
 	@Test
 	void testprimeNumbersVerification1() {
-		assertEquals(25, setUpSceneprimeNumbersVerification1());
+		assertEquals(26, setUpSceneprimeNumbersVerification1());
 	}
 	@Test
 	void testprimeNumbersVerification2() {
-		assertEquals(25, setUpSceneprimeNumbersVerification2());
+		assertEquals(26, setUpSceneprimeNumbersVerification2());
 	}
 	@Test
 	void testprimeNumbersVerification3() {
@@ -129,7 +139,7 @@ class TestPrimeNumbers {
 	@Test
 	void testIsPrimeWithArrayListNbersVeri1() {
 		String info = setUpSceneIsPrimeValidation2Prime().toString();
-		assertEquals("[true, true, true]", info);
+		assertEquals("[true, true, true, true]", info);
 	}
 	@Test
 	void testIsPrimeWithArrayListNbersVeri2() {
@@ -140,5 +150,17 @@ class TestPrimeNumbers {
 	void testIsPrimeWithArrayListNbersVeri3() {
 		String info = setUpSceneIsPrimeValidation4Prime().toString();
 		assertEquals("[true, true, true]", info);
+	}
+	@Test
+	void testCovertToInt() {
+		assertEquals(22, setUpSceneConvertToInt());
+	}
+	@Test
+	void testExceptionConvertToInt() {
+		try {
+			setUpSceneExceptioConvert();
+		} catch (NumberFormatException e) {
+			fail();
+		}
 	}
 }
