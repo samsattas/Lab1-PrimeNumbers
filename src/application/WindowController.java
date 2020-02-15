@@ -42,25 +42,35 @@ public class WindowController {
 		gp.setAlignment(Pos.CENTER);
 		mp.getChildren().add(gp);
 		int counter = 1;
-		int time = 1000;
+		int time = 100*aux;
+		int time2 = 100;
 		for(int i = 0; i < matrix && counter <= aux; i++) {
 			for(int j = 0; j < matrix && counter <= aux; j++) {
 				
 				Label l = new Label(counter+" ");
 				l.setFont(Font.font(20));
 				l.setMinSize(50, 40);
+//				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time);
+//				t.start();
+				
 				if(counter==2) {
-					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
+//					l.setStyle("-fx-border-color: white; -fx-background-color: #1aff1a;");
+					MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time2);
+					t.start();
+					time2+=100;
 				}else if(counter%2==0) {
-					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
+//					l.setStyle("-fx-border-color: white; -fx-background-color: red;");
+					MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time2);
+					t.start();
+					time2+=100;
+				}else {
+					MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time);
+					t.start();
 				}
-				MatrixThread t = new MatrixThread(l, pn.primeNumbersVerification2(counter), time);
-				t.start();
-
 				
 				gp.add(l, j, i);
 				counter++;
-				time+=200;
+				time+=(100);
 			}
 		}
 	}
