@@ -43,9 +43,13 @@ class TestPrimeNumbers {
 		}
 		return counter;
 	}
-	public int setUpScenegenerateMatrix() {
+	public int setUpScenegenerateMatrixInexact() {
 		PrimeNumbers prime = new PrimeNumbers();
 		return prime.generateMatrix(133);
+	}
+	public int setUpScenegenerateMatrixExact() {
+		PrimeNumbers prime = new PrimeNumbers();
+		return prime.generateMatrix(100);
 	}
 	public ArrayList<Boolean> setUpSceneIsPrimeValidation1Prime() {
 		ArrayList<Boolean> arrayWithBoolean = new ArrayList<>();
@@ -91,6 +95,11 @@ class TestPrimeNumbers {
 		int toTest = prime.convertToInt("dd");
 		return toTest;
 	}
+	public int setUpSceneExceptioConvertNegative() {
+		PrimeNumbers prime = new PrimeNumbers();
+		int toTest = prime.convertToInt("-100");
+		return toTest;
+	}
 	@Test
 	void test() {
 		assertEquals(25, setUpScenePrimeNumbers());
@@ -105,8 +114,12 @@ class TestPrimeNumbers {
 		assertEquals(26, setUpSceneprimeNumbersVerification3());
 	}
 	@Test
-	void testgenerateMatrix(){
-		assertEquals(12, setUpScenegenerateMatrix());
+	void testgenerateMatrixInxact(){
+		assertEquals(12, setUpScenegenerateMatrixInexact());
+	}
+	@Test
+	void testgenerateMatrixExact(){
+		assertEquals(10, setUpScenegenerateMatrixExact());
 	}
 	@Test
 	void testIsPrimeWithArrayList() {
@@ -132,6 +145,14 @@ class TestPrimeNumbers {
 	void testExceptionConvertToInt() {
 		try {
 			setUpSceneExceptioConvert();
+		} catch (NumberFormatException e) {
+			fail();
+		}
+	}
+	@Test
+	void testExceptionConvertNegative() {
+		try {
+			setUpSceneExceptioConvertNegative();
 		} catch (NumberFormatException e) {
 			fail();
 		}
