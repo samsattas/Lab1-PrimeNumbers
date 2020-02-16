@@ -42,7 +42,7 @@ public class WindowController {
 		gp.setAlignment(Pos.CENTER);
 		mp.getChildren().add(gp);
 		int counter = 1;
-		int time = 100*aux;
+		int time = 60*aux;
 		int time2 = 100;
 		for(int i = 0; i < matrix && counter <= aux; i++) {
 			for(int j = 0; j < matrix && counter <= aux; j++) {
