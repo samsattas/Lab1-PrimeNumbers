@@ -51,6 +51,7 @@ public class PrimeNumbers {
 		return aux;
 	}	
 	
+	
 	public boolean Validation1Prime(int numberToValidate) {
 		int counter = 0;
 		boolean ok = false;
@@ -67,6 +68,8 @@ public class PrimeNumbers {
 		}
 		return ok;
 	}
+	
+	
 	public int generateMatrix(int n) {
 		double x = 0;
 		int aux = 0;
